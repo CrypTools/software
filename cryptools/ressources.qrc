@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Icons/close.png</file>
+        <file>Icons/close_click.png</file>
+        <file>Icons/close_hover.png</file>
+        <file>Icons/minimize.png</file>
+        <file>Icons/minimize_click.png</file>
+        <file>Icons/minimize_hover.png</file>
+        <file>Icons/maximize.png</file>
+        <file>Icons/maximize_click.png</file>
+        <file>Icons/maximize_hover.png</file>
+        <file>Icons/unmaximize.png</file>
+        <file>Icons/unmaximize_click.png</file>
+        <file>Icons/unmaximize_hover.png</file>
+        <file>Icons/title_bar_separator.png</file>
+        <file>Icons/window_icon.png</file>
+        <file>Icons/buttonExample.png</file>
+        <file>Icons/buttonExample_click.png</file>
+        <file>Icons/buttonExample_hover.png</file>
+    </qresource>
+</RCC>
