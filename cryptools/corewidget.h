@@ -9,6 +9,8 @@ class CustomButton;
 #include "tools/tools.h"
 #include "tools/vigeneregroupwidget.h"
 class VigenereGroupWidget;
+#include "tools/caesargroupwidget.h"
+class caesarGroupWidget;
 
 class CoreWidget : public QWidget
 {
@@ -19,6 +21,8 @@ public:
     QGridLayout *w_layout;
 
     VigenereGroupWidget *vige;
+
+    caesarGroupWidget *cesar;
 
 signals:
 

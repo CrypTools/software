@@ -34,7 +34,8 @@ SOURCES += \
     custombutton.cpp \
     corewidget.cpp \
     tools/tools.cpp \
-    tools/vigeneregroupwidget.cpp
+    tools/vigeneregroupwidget.cpp \
+    tools/caesargroupwidget.cpp
 
 HEADERS += \
         root.h \
@@ -45,9 +46,13 @@ HEADERS += \
     custombutton.h \
     corewidget.h \
     tools/tools.h \
-    tools/vigeneregroupwidget.h
+    tools/vigeneregroupwidget.h \
+    tools/caesargroupwidget.h
 
 RESOURCES += \
     ressources.qrc
 
 DISTFILES +=
+
+FORMS += \
+    tools/caesargroupwidget.ui

@@ -6,7 +6,10 @@ CoreWidget::CoreWidget(QWidget *parent) : QWidget(parent)
 
     vige = new VigenereGroupWidget(this);
 
+    cesar = new caesarGroupWidget(this);
+
     w_layout->addWidget(vige, 0, 0, 8, 2);
+    w_layout->addWidget(cesar, 0, 2, 8, 2);
 }
 
 
