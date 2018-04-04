@@ -4,13 +4,19 @@
 #include <QWidget>
 #include <QGridLayout>
 #include <QMessageBox>
+
 #include "custombutton.h"
 class CustomButton;
+
 #include "tools/tools.h"
 #include "tools/vigeneregroupwidget.h"
 class VigenereGroupWidget;
+
 #include "tools/caesargroupwidget.h"
 class caesarGroupWidget;
+
+#include "tools/basicpermutationgroupwidget.h"
+class BasicPermutationGroupWidget;
 
 class CoreWidget : public QWidget
 {
@@ -23,6 +29,8 @@ public:
     VigenereGroupWidget *vige;
 
     caesarGroupWidget *cesar;
+
+    BasicPermutationGroupWidget *permute;
 
 signals:
 

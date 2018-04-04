@@ -1,0 +1,57 @@
+int remainingCases = text.length() % (key.length());
+int tempVar;
+
+int textLenght = text.length();
+int keyLenght = key.length();
+int rowLenght = ((textLenght + remainingCases)/(keyLenght));
+
+qDebug().noquote() << "Variables:\ntextLenght = " + QString::number(textLenght) + "\nkeyLenght = " + QString::number(keyLenght) + "\nrowLenght = " + QString::number(rowLenght) +
+                      "\nremainingCases  = " + QString::number(remainingCases);
+
+if ((keyLenght == 0) | (textLenght == 0))
+    return "##EMPTY INPUT##";
+
+QList<QList<QChar>> mainList;
+QList<QChar> tempList;
+QList<int> keyList;
+QList<int> keySortedList;
+QList<int> indexes;
+
+QString result = "";
+
+for (int i=0; i!=keyLenght; ++i)
+    keyList.append(int(key[i].toLatin1()*1000 + i));
+
+keySortedList = keyList;
+std::sort(keySortedList.begin(), keySortedList.end());
+
+for (int i=0; i!=keyLenght; ++i){
+    qDebug() << "Fill indexes: i = " + QString::number(i) + "; keysorted[i] = " + QString::number(keySortedList[i]) + "; indexof = " + QString::number(keyList.indexOf(keySortedList[i]));
+    indexes.append(keyList.indexOf(keySortedList[i]));           //Ascii-code sort
+    qDebug() << "Result: indexes[i] = " + QString::number(indexes[i]);
+}
+
+for (int i=0; i!=rowLenght; ++i){    //Fill 2 dimensional array
+    for (int j=0; j!=keyLenght; ++j){                                //Usage example:
+        tempVar = j + keyLenght * i;                                //To get value of cord (x;y):
+        if (tempVar<textLenght)                                     //mainList[y][x]
+            tempList.append(text[tempVar]);                         //! CORDS ARE REVERSED !
+        else
+            tempList.append(text[0]);
+    }
+    mainList.append(tempList);
+    tempList.clear();
+}
+
+for (int i=0; i!=keyLenght; ++i){
+    qDebug().noquote() << "MainList[i] -> tempList\n Sachant que lenght(mainList) = " + QString::number(mainList.length()) + " ET i = " + QString::number(i) +
+                          " ET indexes[i] = " + QString::number(indexes[i]);
+    tempList = mainList[indexes[i]];
+    qDebug() << "tempList : Succès";
+    for (int j=0; j!=tempList.length(); ++j){
+        qDebug() << "result += tempList[j]\n Sachant que lenght(tempList) = " + QString::number(tempList.length());
+        result += tempList[j];
+        qDebug() << "result : Succès";
+    }
+    tempList.clear();
+}

@@ -118,3 +118,57 @@ QString vigenereShifts(QString key, bool alphabetOnly)
             shifts.append(QString::number(int(key[i].toLatin1())) + " - ");
     return shifts.remove(shifts.length()-3, 3);
 }
+
+QString permutationEncrypt(tools::direction dir, QString text, QString key) //Needs investigation...
+{
+    QList<QList<QChar>> tabmain;
+    QList<QChar> tabtemp;
+
+    QList<int> tabtempint;
+    QList<int> orderint;
+    QList<int> sortedint;
+
+    QString result = "";
+
+    int textLenght = text.length();
+    int keyLenght = key.length();
+
+    int remainder = (-textLenght)%keyLenght;
+
+    for (int i=0; i<((textLenght+remainder)/keyLenght); ++i){ //Fill array
+        for (int j=0; j<keyLenght; ++j)
+            tabtemp.append(text[i*keyLenght + j]);
+        tabmain.append(tabtemp);
+        tabtemp.clear();
+    }
+
+    for (int i=0; i<keyLenght; ++i) //Key as an array
+        tabtempint.append(int(key[i].toLatin1()*1000 + i));
+
+    sortedint = tabtempint;
+
+    std::sort(sortedint.begin(), sortedint.end());
+
+    for (int i=0; i<keyLenght; ++i)
+        orderint.append(tabtempint.indexOf(sortedint[i]));
+
+    switch (dir) {
+    case tools::Column:
+        return "Not supported yet #0";
+        break;
+
+    case tools::Row:
+        for (int i=0; i<((textLenght+remainder)/keyLenght); ++i){
+            tabtemp = tabmain[sortedint[i]];
+            for (int j=0; j<tabtemp.length(); ++j)
+                result += tabtemp[j];
+            tabtemp.clear();
+        }
+        break;
+
+    case tools::Grid:
+        return "Not supported yet #1";
+        break;
+    }
+    return result;
+}

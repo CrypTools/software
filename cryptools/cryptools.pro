@@ -35,7 +35,8 @@ SOURCES += \
     corewidget.cpp \
     tools/tools.cpp \
     tools/vigeneregroupwidget.cpp \
-    tools/caesargroupwidget.cpp
+    tools/caesargroupwidget.cpp \
+    tools/basicpermutationgroupwidget.cpp
 
 HEADERS += \
         root.h \
@@ -47,12 +48,15 @@ HEADERS += \
     corewidget.h \
     tools/tools.h \
     tools/vigeneregroupwidget.h \
-    tools/caesargroupwidget.h
+    tools/caesargroupwidget.h \
+    tools/basicpermutationgroupwidget.h
 
 RESOURCES += \
     ressources.qrc
 
-DISTFILES +=
+DISTFILES += \
+    tools/removed
 
 FORMS += \
-    tools/caesargroupwidget.ui
+    tools/caesargroupwidget.ui \
+    tools/basicpermutationgroupwidget.ui
