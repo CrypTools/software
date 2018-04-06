@@ -2,6 +2,7 @@
 #define BASICPERMUTATIONGROUPWIDGET_H
 
 #include <QGroupBox>
+#include <QMessageBox>
 #include "tools.h"
 class tools;
 
