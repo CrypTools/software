@@ -6,6 +6,9 @@ BasicPermutationGroupWidget::BasicPermutationGroupWidget(QWidget *parent) :
     ui(new Ui::BasicPermutationGroupWidget)
 {
     ui->setupUi(this);
+    ui->inputWritingDir->hide();
+    ui->outputReadingDir->hide();
+
 }
 
 BasicPermutationGroupWidget::~BasicPermutationGroupWidget()
@@ -23,7 +26,7 @@ void BasicPermutationGroupWidget::on_showKeyCheckBox_stateChanged()
 
 void BasicPermutationGroupWidget::on_encryptButton_clicked()
 {
-    QMessageBox::warning(this, "Warning", "This function is too unstable and therefore can't be used yet !");
+    QMessageBox::warning(this, "Warning", "This function is too unstable and therefore cannot be used yet !");
     return;
     switch (ui->directionComboBox->currentIndex()) {
     case 0:
@@ -40,6 +43,19 @@ void BasicPermutationGroupWidget::on_encryptButton_clicked()
 
 void BasicPermutationGroupWidget::on_decryptButton_clicked()
 {
-    QMessageBox::warning(this, "Warning", "This function is too unstable and therefore can't be used yet !");
+    QMessageBox::warning(this, "Warning", "This function is too unstable and therefore cannot be used yet !");
     return;
+}
+
+void BasicPermutationGroupWidget::on_advancedCheckBox_stateChanged()
+{
+    if (ui->advancedCheckBox->isChecked()){
+        ui->inputWritingDir->show();
+        ui->outputReadingDir->show();
+    }
+    else  {
+        ui->inputWritingDir->hide();
+        ui->outputReadingDir->hide();
+    }
+
 }

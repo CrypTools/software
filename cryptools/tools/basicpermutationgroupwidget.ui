@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>409</width>
-    <height>331</height>
+    <height>411</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,14 +31,17 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="directionLabel">
-     <property name="text">
-      <string>Permutation direction: </string>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="keyLine">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Key</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
+   <item row="2" column="0">
     <widget class="QComboBox" name="directionComboBox">
      <item>
       <property name="text">
@@ -57,37 +60,62 @@
      </item>
     </widget>
    </item>
+   <item row="2" column="1">
+    <widget class="QCheckBox" name="advancedCheckBox">
+     <property name="text">
+      <string>Show advanced options</string>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="0">
+    <widget class="QComboBox" name="inputWritingDir">
+     <item>
+      <property name="text">
+       <string>Write to rows</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Write to columns</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="outputReadingDir">
+     <item>
+      <property name="text">
+       <string>Read from rows</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Read from columns</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
     <widget class="QPushButton" name="encryptButton">
      <property name="text">
       <string>Encrypt</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="4" column="1">
     <widget class="QPushButton" name="decryptButton">
      <property name="text">
       <string>Decrypt</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2">
+   <item row="5" column="0" colspan="2">
     <widget class="QTextEdit" name="outputText">
      <property name="readOnly">
       <bool>true</bool>
      </property>
      <property name="placeholderText">
       <string>Output</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="keyLine">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Key</string>
      </property>
     </widget>
    </item>
