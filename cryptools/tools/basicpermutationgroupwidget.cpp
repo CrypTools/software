@@ -23,6 +23,8 @@ void BasicPermutationGroupWidget::on_showKeyCheckBox_stateChanged()
 
 void BasicPermutationGroupWidget::on_encryptButton_clicked()
 {
+    QMessageBox::warning(this, "Warning", "This function is too unstable and therefore can't be used yet !");
+    return;
     switch (ui->directionComboBox->currentIndex()) {
     case 0:
         ui->outputText->setText(permutationEncrypt(tools::Column, ui->inputText->toPlainText(), ui->keyLine->text()));
@@ -37,4 +39,7 @@ void BasicPermutationGroupWidget::on_encryptButton_clicked()
 }
 
 void BasicPermutationGroupWidget::on_decryptButton_clicked()
-{}
+{
+    QMessageBox::warning(this, "Warning", "This function is too unstable and therefore can't be used yet !");
+    return;
+}
