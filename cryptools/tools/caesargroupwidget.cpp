@@ -23,10 +23,19 @@ void caesarGroupWidget::on_showShiftCheckBox_stateChanged()
 
 void caesarGroupWidget::on_encryptButton_clicked()
 {
+    unselect_output();
     ui->outputText->setText(caesarEncrypt(ui->inputText->toPlainText(), ui->shiftLineEdit->text().toInt()));
 }
 
 void caesarGroupWidget::on_decryptButton_clicked()
 {
     ui->outputText->setText(caesarDecrypt(ui->inputText->toPlainText(), ui->shiftLineEdit->text().toInt()));
+}
+
+void caesarGroupWidget::unselect_output()
+{
+    QTextCursor m_cursor;
+    m_cursor.setPosition(0);
+    ui->outputText->setTextCursor(m_cursor);
+    ui->inputText->setTextCursor(m_cursor);
 }

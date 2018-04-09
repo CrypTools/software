@@ -10,6 +10,7 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
+#include <QTextCursor>
 #include "tools.h"
 
 class VigenereGroupWidget : public QGroupBox
@@ -33,6 +34,7 @@ public:
 signals:
 
 public slots:
+    void unselect_output();
     void vigenereEncryptSlot();
     void vigenereDecryptSlot();
     void updateVigenereKeyLine();
