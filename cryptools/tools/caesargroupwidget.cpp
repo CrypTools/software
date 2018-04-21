@@ -23,7 +23,6 @@ void caesarGroupWidget::on_showShiftCheckBox_stateChanged()
 
 void caesarGroupWidget::on_encryptButton_clicked()
 {
-    unselect_output();
     ui->outputText->setText(caesarEncrypt(ui->inputText->toPlainText(), ui->shiftLineEdit->text().toInt()));
 }
 

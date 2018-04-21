@@ -51,17 +51,18 @@ VigenereGroupWidget::VigenereGroupWidget(QWidget *parent) : QGroupBox("Vigenere"
     connect(decryptButtonVigenere, SIGNAL(clicked(bool)), this, SLOT(vigenereDecryptSlot()));
     connect(vigenereShowShiftsCheckBox, SIGNAL(stateChanged(int)), this, SLOT(updateShiftState()));
     connect(vigenereKeyLine, SIGNAL(textEdited(QString)), this, SLOT(updateShiftLine()));
+    connect(vigenereAlphabetOnlyCheckBox, SIGNAL(stateChanged(int)), this, SLOT(updateShiftLine()));
 }
 
 void VigenereGroupWidget::vigenereEncryptSlot()
 {
-    if ((!vigenereInputText->toPlainText().isEmpty()) && (!vigenereKeyLine->text().isEmpty()))
+    if ((vigenereInputText->toPlainText().isEmpty() == false) && (vigenereKeyLine->text().isEmpty() == false))
         vigenereOutputText->setPlainText(vigenereEncrypt(vigenereInputText->toPlainText(), vigenereKeyLine->text(), vigenereAlphabetOnlyCheckBox->isChecked()));
 }
 
 void VigenereGroupWidget::vigenereDecryptSlot()
 {
-    if ((!vigenereInputText->toPlainText().isEmpty()) && (!vigenereKeyLine->text().isEmpty()))
+    if ((vigenereInputText->toPlainText().isEmpty() == false) && (vigenereKeyLine->text().isEmpty() == false))
         vigenereOutputText->setPlainText(vigenereDecrypt(vigenereInputText->toPlainText(), vigenereKeyLine->text(), vigenereAlphabetOnlyCheckBox->isChecked()));
 }
 
@@ -76,6 +77,7 @@ void VigenereGroupWidget::updateVigenereKeyLine()
         vigenereShowShiftsCheckBox->setEnabled(false); //Forbids use of the shift options
         vigenereShowShiftsCheckBox->setChecked(false);
     }
+    updateShiftLine();
 }
 
 void VigenereGroupWidget::updateShiftLine()
