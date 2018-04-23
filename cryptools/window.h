@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include <QWidget>
+#include <QDebug>
 #include <QSizeGrip>
 #include <QPoint>
 #include <QMouseEvent>
@@ -23,8 +24,8 @@ public:
 
     QRect rec;
 
-    int m_DiffX;
-    int m_DiffY;
+    int m_DiffX, normalWidth, normalX;
+    int m_DiffY, normalHeight, normalY;
 
     int *xMargin;
     int *yMargin;

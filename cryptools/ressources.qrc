@@ -17,6 +17,5 @@
         <file>Icons/buttonExample.png</file>
         <file>Icons/buttonExample_click.png</file>
         <file>Icons/buttonExample_hover.png</file>
-        <file>tools/style.css</file>
     </qresource>
 </RCC>

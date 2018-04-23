@@ -1,8 +1,8 @@
 #ifndef BASICPERMUTATIONGROUPWIDGET_H
 #define BASICPERMUTATIONGROUPWIDGET_H
 
-#include <QMessageBox>
 #include <QGroupBox>
+#include <QMessageBox>
 #include "tools.h"
 class tools;
 
@@ -24,7 +24,6 @@ public slots:
     void on_showKeyCheckBox_stateChanged();
     void on_encryptButton_clicked();
     void on_decryptButton_clicked();
-    void on_advancedCheckBox_stateChanged();
 };
 
 #endif // BASICPERMUTATIONGROUPWIDGET_H

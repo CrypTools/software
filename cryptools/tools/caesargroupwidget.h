@@ -2,7 +2,6 @@
 #define CAESARGROUPWIDGET_H
 
 #include <QGroupBox>
-#include <QTextCursor>
 #include "tools.h"
 
 namespace Ui {
@@ -20,7 +19,6 @@ public:
 private:
     Ui::caesarGroupWidget *ui;
 public slots:
-    void unselect_output();
     void on_showShiftCheckBox_stateChanged();
     void on_encryptButton_clicked();
     void on_decryptButton_clicked();

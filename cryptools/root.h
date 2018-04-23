@@ -2,6 +2,10 @@
 #define ROOT_H
 
 #include <QLabel>
+#include <QMessageBox>
+#include <QPropertyAnimation>
+#include <QCloseEvent>
+
 #include "window.h"
 class window;
 #include "corewidget.h"
@@ -15,7 +19,10 @@ public:
     root();
 private:
     CoreWidget *r_cWidget;
+    QPropertyAnimation *exitAnimation;
 
+protected:
+    void closeEvent(QCloseEvent *event);
 
 };
 

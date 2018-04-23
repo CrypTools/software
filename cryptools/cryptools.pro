@@ -55,8 +55,7 @@ RESOURCES += \
     ressources.qrc
 
 DISTFILES += \
-    tools/removed \
-    tools/style.css
+    tools/removed
 
 FORMS += \
     tools/caesargroupwidget.ui \

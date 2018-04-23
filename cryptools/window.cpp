@@ -37,10 +37,13 @@ void window::maximizeClicked()
 {
     if (isMaximized()) {
         showNormal();
-        resize(rec.width()*0.65, rec.height()*0.65);
+        resize(normalWidth, normalHeight);
+        move(normalX, normalY);
         titleBarWidget->unmaximizeButton->hide();
         titleBarWidget->maximizeButton->show();
     } else {
+        normalWidth = width(); normalHeight = height();
+        normalX = x(); normalY = y();
         showMaximized();
         titleBarWidget->maximizeButton->hide();
         titleBarWidget->unmaximizeButton->show();
@@ -67,7 +70,7 @@ void window::clickedMouse(QMouseEvent *event)
 void window::releasedMouse(QMouseEvent *event)
 {
     Q_UNUSED(event);
-
+    if (m_DiffY > y() && titleBarWidget->unmaximizeButton->isHidden() == true) emit titleBarWidget->maximizeButton->clicked();
     setCursor(QCursor(Qt::ArrowCursor));
 }
 

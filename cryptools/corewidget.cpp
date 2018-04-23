@@ -9,10 +9,11 @@ CoreWidget::CoreWidget(QWidget *parent) : QWidget(parent)
     cesar = new caesarGroupWidget(this);
 
     permute = new BasicPermutationGroupWidget(this);
+    permute->hide();
 
     w_layout->addWidget(vige, 0, 0, 8, 2);
     w_layout->addWidget(cesar, 0, 2, 8, 2);
-    w_layout->addWidget(permute, 0, 4, 8, 2);
+    //w_layout->addWidget(permute, 0, 4, 8, 2);
 }
 
 
