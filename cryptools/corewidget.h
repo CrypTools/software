@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QGridLayout>
 #include <QMessageBox>
+#include <QPushButton>
 
 #include "custombutton.h"
 class CustomButton;
@@ -18,6 +19,9 @@ class caesarGroupWidget;
 #include "tools/basicpermutationgroupwidget.h"
 class BasicPermutationGroupWidget;
 
+#include "tools/primewidget.h"
+class primeWidget;
+
 class CoreWidget : public QWidget
 {
     Q_OBJECT
@@ -31,6 +35,10 @@ public:
     caesarGroupWidget *cesar;
 
     BasicPermutationGroupWidget *permute;
+
+    primeWidget *primeDialog;
+
+    QPushButton *button;
 
 signals:
 

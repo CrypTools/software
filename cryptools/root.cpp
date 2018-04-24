@@ -8,7 +8,7 @@ root::root()
     setWindowTitle("cryptools");
     setMinimumWidth(300);
     setMinimumHeight(140);
-    setCentralWidgetMargin(20, 20);
+    setCentralWidgetMargin(10, 10);
     setWindowIcon(QIcon(":/Icons/window_icon.png"));
     setTitleBarIcon(QPixmap(":/Icons/window_icon.png"));
 

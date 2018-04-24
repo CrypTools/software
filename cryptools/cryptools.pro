@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = cryptools
 TEMPLATE = app
-
+LIBS += -L/usr/local/lib -lgmpxx -lgmp
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -36,7 +36,10 @@ SOURCES += \
     tools/tools.cpp \
     tools/vigeneregroupwidget.cpp \
     tools/caesargroupwidget.cpp \
-    tools/basicpermutationgroupwidget.cpp
+    tools/basicpermutationgroupwidget.cpp \
+    tools/rsa.cpp \
+    tools/prime-generator.cpp \
+    tools/primewidget.cpp
 
 HEADERS += \
         root.h \
@@ -49,7 +52,9 @@ HEADERS += \
     tools/tools.h \
     tools/vigeneregroupwidget.h \
     tools/caesargroupwidget.h \
-    tools/basicpermutationgroupwidget.h
+    tools/basicpermutationgroupwidget.h \
+    tools/prime-generator.h \
+    tools/primewidget.h
 
 RESOURCES += \
     ressources.qrc
@@ -59,4 +64,6 @@ DISTFILES += \
 
 FORMS += \
     tools/caesargroupwidget.ui \
-    tools/basicpermutationgroupwidget.ui
+    tools/basicpermutationgroupwidget.ui \
+    tools/primewidget.ui
+

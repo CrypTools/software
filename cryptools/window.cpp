@@ -70,7 +70,7 @@ void window::clickedMouse(QMouseEvent *event)
 void window::releasedMouse(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    if (m_DiffY > y() && titleBarWidget->unmaximizeButton->isHidden() == true) emit titleBarWidget->maximizeButton->clicked();
+
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
