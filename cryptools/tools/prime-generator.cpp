@@ -2,6 +2,7 @@
 
 void generator::primeGenerator(int number, int minLenght, mpz_class* resultArray)
 {
+    srand(clock());
     running = true;
     for (int i =0; i<number; ++i){
         mpz_class nbr = 10;

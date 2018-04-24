@@ -7,8 +7,10 @@
 #include <QPoint>
 #include <QMouseEvent>
 #include <QRect>
+#include <QList>
 #include <QApplication>
 #include <QScreen>
+#include <QPropertyAnimation>
 #include <QGuiApplication>
 #include "titlebar.h"
 class titleBar;

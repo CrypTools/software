@@ -38,6 +38,8 @@ void primeWidget::on_startButton_clicked()
     ui->buttonBox->buttons().value(1)->setEnabled(false);
     ui->startButton->setEnabled(false);
     ui->stopButton->setEnabled(true);
+    ui->amountSpin->setEnabled(false);
+    ui->lenghtSpin->setEnabled(false);
     c = 0;
     emit startCalc(ui->amountSpin->value(), ui->lenghtSpin->value(), results);
 }
@@ -57,11 +59,13 @@ void primeWidget::whenFinished()
 {
     ui->stopButton->setEnabled(false);
     ui->startButton->setEnabled(true);
+    ui->amountSpin->setEnabled(true);
+    ui->lenghtSpin->setEnabled(true);
     ui->buttonBox->buttons().value(1)->setEnabled(true);
     ui->buttonBox->buttons().value(0)->setEnabled(true);
     ui->logText->clear();
     for (int i=0; i<ui->amountSpin->value(); ++i){
-        ui->logText->appendPlainText("Prime " + QString::number(i) + ": " + QString::fromStdString(results[i].get_str()) + "\n\n");
+        ui->logText->appendPlainText("Prime " + QString::number(i+1) + ": " + QString::fromStdString(results[i].get_str()) + "\n\n");
     }
 }
 
