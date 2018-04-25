@@ -39,7 +39,8 @@ SOURCES += \
     tools/basicpermutationgroupwidget.cpp \
     tools/rsa.cpp \
     tools/prime-generator.cpp \
-    tools/primewidget.cpp
+    tools/primewidget.cpp \
+    rsawidget.cpp
 
 HEADERS += \
         root.h \
@@ -54,7 +55,8 @@ HEADERS += \
     tools/caesargroupwidget.h \
     tools/basicpermutationgroupwidget.h \
     tools/prime-generator.h \
-    tools/primewidget.h
+    tools/primewidget.h \
+    rsawidget.h
 
 RESOURCES += \
     ressources.qrc
@@ -65,5 +67,6 @@ DISTFILES += \
 FORMS += \
     tools/caesargroupwidget.ui \
     tools/basicpermutationgroupwidget.ui \
-    tools/primewidget.ui
+    tools/primewidget.ui \
+    rsawidget.ui
 
