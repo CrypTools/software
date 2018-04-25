@@ -4,6 +4,12 @@
 #include <QDialog>
 #include <QThread>
 #include <QDebug>
+#include <QAbstractButton>
+#include <QFileDialog>
+#include <QString>
+#include <QFile>
+#include <QMessageBox>
+#include <QTextStream>
 #include <gmpxx.h>
 
 #include "prime-generator.h"
@@ -25,12 +31,14 @@ private:
     Ui::primeWidget *ui;
     QThread calcThread;
     generator *generatorInst;
-    mpz_class results[512];
-    int c;
+    mpz_class results[2147000];
+    int c, numbers, lenght;
+    QString plaintext;
 public slots:
     void on_checkBox_clicked();
     void on_startButton_clicked();
     void on_stopButton_clicked();
+    void on_buttonBox_clicked(QAbstractButton *button);
     void whenFinished();
     void testLog();
 signals:
